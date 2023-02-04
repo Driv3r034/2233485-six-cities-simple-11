@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
-import {OffersCardInterface, OffersLocation} from '../../types/offers-card-types';
+import { OffersCardInterface, OffersLocation } from '../../types/offers-card-types';
 import OfferCard from '../offer-card/offer-card';
-import Map from "../map/map";
+import Map from '../map/map';
 
 type OfferListProps = {
   offersCards: OffersCardInterface[];
@@ -16,8 +16,6 @@ const CITY: OffersLocation = {
 const OfferList: FC<OfferListProps> = ({ offersCards }) => {
   const [openSort, setOpenSort] = useState(false);
   const [activeOfferCardId, setActiveOfferCardId] = useState<number | null>(null);
-  // eslint-disable-next-line no-console
-  console.log('activeOfferCardId', activeOfferCardId);
 
   const handleSortOffer = () => {
     setOpenSort((prevState) => !prevState);
@@ -67,13 +65,13 @@ const OfferList: FC<OfferListProps> = ({ offersCards }) => {
           </div>
         </section>
         <div className="cities__right-section">
-          {/*<section className="cities__map map">*/}
+          <section className="cities__map map">
             <Map
               city={CITY}
               points={points}
               selectedPointsId={activeOfferCardId}
             />
-          {/*</section>*/}
+          </section>
         </div>
       </div>
     </div>

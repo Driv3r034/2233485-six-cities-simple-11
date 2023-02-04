@@ -17,12 +17,12 @@ export const useMap = (mapRef: MutableRefObject<HTMLElement | null>, city: Offer
       });
 
       const layer = new TileLayer(
-        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}{r}.png',
+        'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
         {
           maxZoom: 19,
           attribution:
             '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-        }
+        },
       );
 
       coordinates.addLayer(layer);

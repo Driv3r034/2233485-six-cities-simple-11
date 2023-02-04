@@ -2,6 +2,7 @@ import { FC, useEffect, useRef } from 'react';
 import { useMap } from '../../hooks/useMap';
 import { Icon, Marker } from 'leaflet';
 import { OffersLocation } from '../../types/offers-card-types';
+import 'leaflet/dist/leaflet.css';
 
 const defaultCustomIcon = new Icon({
   iconUrl: 'img/pin.svg',
@@ -44,7 +45,7 @@ const Map: FC<MapProps> = ({ city, points, selectedPointsId }) => {
     }
   }, [map, points, selectedPointsId]);
 
-  return <div style={{height: '800px'}} ref={mapRef} ></div>;
+  return <div style={{height: '100%'}} ref={mapRef} ></div>;
 };
 
 export default Map;
