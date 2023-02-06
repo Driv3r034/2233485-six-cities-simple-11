@@ -22,8 +22,8 @@ const offersCards: OffersCardInterface[] = [
     ratingStars: RatingStars.fourStars,
     bedrooms: 3,
     location: {
-      latitude: 52.22450804,
-      longitude: 4.535795116,
+      latitude: 52.3909553943508,
+      longitude: 4.85309666406198,
       zoom: 8,
     },
     facilities: ['Wi-Fi', 'Washing machine', 'Towels', 'Heating', 'Coffee machine',
@@ -58,8 +58,8 @@ const offersCards: OffersCardInterface[] = [
     ratingStars: RatingStars.fourStars,
     bedrooms: 1,
     location: {
-      latitude: 48.51529776,
-      longitude: 2.205645045,
+      latitude: 52.3609553943508,
+      longitude: 4.85309666406198,
       zoom: 8,
     },
     facilities: ['Wi-Fi', 'Towels', 'Heating', 'Kitchen', 'Dishwasher', 'Cabel TV', 'Fridge'],
@@ -93,8 +93,8 @@ const offersCards: OffersCardInterface[] = [
     ratingStars: RatingStars.fourStars,
     bedrooms: 2,
     location: {
-      latitude: 52.22450806,
-      longitude: 4.535795120,
+      latitude: 52.3909553943508,
+      longitude: 4.929309666406198,
       zoom: 8,
     },
     facilities: ['Wi-Fi', 'Washing machine', 'Heating', 'Dishwasher', 'Cabel TV', 'Coffee machine'],
@@ -128,8 +128,8 @@ const offersCards: OffersCardInterface[] = [
     ratingStars: RatingStars.fiveStars,
     bedrooms: 4,
     location: {
-      latitude: 50.22450880,
-      longitude: 6.535795520,
+      latitude: 52.3809553943508,
+      longitude: 4.939309666406198,
       zoom: 8,
     },
     facilities: ['Wi-Fi', 'Washing machine', 'Towels', 'Heating', 'Coffee machine',

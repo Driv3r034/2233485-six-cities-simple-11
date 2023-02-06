@@ -1,24 +1,37 @@
 import { FC, useState } from 'react';
-import { OffersCardInterface } from '../../types/offers-card-types';
+import { OffersCardInterface, OffersLocation } from '../../types/offers-card-types';
 import OfferCard from '../offer-card/offer-card';
+import Map from '../map/map';
 
 type OfferListProps = {
   offersCards: OffersCardInterface[];
 }
 
+const CITY: OffersLocation = {
+  latitude: 52.370216,
+  longitude: 4.895168,
+  zoom: 10
+};
+
 const OfferList: FC<OfferListProps> = ({ offersCards }) => {
   const [openSort, setOpenSort] = useState(false);
-  const [activeOfferCard, setActiveOfferCard] = useState<OffersCardInterface | null>(null);
-  // eslint-disable-next-line no-console
-  console.log('activeOfferCard', activeOfferCard);
+  const [activeOfferCardId, setActiveOfferCardId] = useState<number | null>(null);
 
   const handleSortOffer = () => {
     setOpenSort((prevState) => !prevState);
   };
 
   const handlerOfferCardMouseOver = (dataOfferCard: OffersCardInterface) => {
-    setActiveOfferCard(dataOfferCard);
+    setActiveOfferCardId(dataOfferCard.id);
   };
+
+  const points = offersCards.map((offerCard) => {
+    const { id, location } = offerCard;
+    return {
+      id,
+      ...location,
+    };
+  });
 
   return (
     <div className="cities">
@@ -52,7 +65,13 @@ const OfferList: FC<OfferListProps> = ({ offersCards }) => {
           </div>
         </section>
         <div className="cities__right-section">
-          <section className="cities__map map"></section>
+          <section className="cities__map map">
+            <Map
+              city={CITY}
+              points={points}
+              selectedPointsId={activeOfferCardId}
+            />
+          </section>
         </div>
       </div>
     </div>
