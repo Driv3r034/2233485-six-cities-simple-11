@@ -8,7 +8,7 @@ interface OfferProps {
 }
 
 const OfferCard: FC<OfferProps> = ({ dataOfferCard, onMouseOver }) => {
-  const {id, price, isPremium, title, images, ratingStars, type } = dataOfferCard;
+  const { id, price, isPremium, title, images, ratingStars, type } = dataOfferCard;
 
   const handlerOfferCardMouseOver = () => {
     onMouseOver(dataOfferCard);
