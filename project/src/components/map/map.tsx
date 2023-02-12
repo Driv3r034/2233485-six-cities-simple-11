@@ -1,8 +1,8 @@
 import { FC, useEffect, useRef } from 'react';
 import { useMap } from '../../hooks/useMap';
 import { Icon, Marker } from 'leaflet';
-import { OffersLocation } from '../../types/offers-card-types';
 import 'leaflet/dist/leaflet.css';
+import type { OffersLocation } from '../../types/offers-card-types';
 
 const defaultCustomIcon = new Icon({
   iconUrl: 'img/pin.svg',

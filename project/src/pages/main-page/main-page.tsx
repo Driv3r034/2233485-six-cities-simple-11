@@ -2,7 +2,7 @@ import { FC } from 'react';
 import Header from '../../components/header/header';
 import Nav from '../../components/nav/nav';
 import OfferList from '../../components/offer-list/offer-list';
-import { OffersCardInterface } from '../../types/offers-card-types';
+import type { OffersCardInterface } from '../../types/offers-card-types';
 
 type MainPageProps = {
   offersCards: OffersCardInterface[];

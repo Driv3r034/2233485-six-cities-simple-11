@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { OffersCardInterface } from '../../types/offers-card-types';
 import { Link } from 'react-router-dom';
+import type { OffersCardInterface } from '../../types/offers-card-types';
 
 interface OfferProps {
   dataOfferCard: OffersCardInterface;

@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
-import { OffersCardInterface, OffersLocation } from '../../types/offers-card-types';
 import OfferCard from '../offer-card/offer-card';
 import Map from '../map/map';
+import type { OffersCardInterface, OffersLocation } from '../../types/offers-card-types';
 
 type OfferListProps = {
   offersCards: OffersCardInterface[];
