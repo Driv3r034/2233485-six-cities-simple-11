@@ -1,4 +1,4 @@
-import {RatingStars} from '../../types/offers-card-types';
+import { RatingStars } from '../../types/offers-card-types';
 
 export const getRatingStars = (rating: number) => {
 

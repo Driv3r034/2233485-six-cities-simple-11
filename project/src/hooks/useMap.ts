@@ -1,6 +1,6 @@
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
 import { TileLayer, Map } from 'leaflet';
-import { OffersLocation } from '../types/offers-card-types';
+import type { OffersLocation } from '../types/offers-card-types';
 
 export const useMap = (mapRef: MutableRefObject<HTMLElement | null>, city: OffersLocation) => {
   const [map, setMap] = useState<Map | null>(null);

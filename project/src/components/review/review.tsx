@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { ReviewType } from '../../types/offers-card-types';
 import { getRatingStars } from './review.utils';
+import type { ReviewType } from '../../types/offers-card-types';
 
 type ReviewProps = {
   review: ReviewType;
