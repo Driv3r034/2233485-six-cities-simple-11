@@ -18,7 +18,7 @@ const currentCustomIcon = new Icon({
 
 type MapProps = {
   city: OffersLocation;
-  points: (OffersLocation & { id: number })[];
+  points?: (OffersLocation & { id: number })[];
   selectedPointsId: number | null;
 };
 
@@ -28,7 +28,7 @@ const Map: FC<MapProps> = ({ city, points, selectedPointsId }) => {
 
   useEffect(() => {
     if (map) {
-      points.forEach((point) => {
+      points?.forEach((point) => {
         const marker = new Marker({
           lat: point.latitude,
           lng: point.longitude

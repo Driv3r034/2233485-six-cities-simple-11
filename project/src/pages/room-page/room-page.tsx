@@ -6,7 +6,7 @@ import ReviewForm from '../../components/review/review-form';
 import { getRatingStars } from '../../components/review/review.utils';
 import { reviews } from '../../mocks/reviews';
 import Map from '../../components/map/map';
-import NearListOffers from '../../components/near-list-offers /near-list-offers';
+import OfferCard from "../../components/offer-card/offer-card";
 import type { OffersCardInterface, OffersLocation } from '../../types/offers-card-types';
 
 type RoomPageProps = {
@@ -153,7 +153,9 @@ const RoomPage: FC<RoomPageProps> = ({ offersCards }) => {
             <h2 className="near-places__title">Other places in the neighbourhood</h2>
             <div className="near-places__list places__list">
 
-              <NearListOffers offersCards={offersCards} />
+              {offersCards.map((item) =>
+                <OfferCard key={item.id} dataOfferCard={item} onMouseOver={handlerOfferCardMouseOver} />
+              ).slice(0, 3)}
 
             </div>
           </section>
