@@ -6,7 +6,7 @@ import ReviewForm from '../../components/review/review-form';
 import { getRatingStars } from '../../components/review/review.utils';
 import { reviews } from '../../mocks/reviews';
 import Map from '../../components/map/map';
-import OfferCard from "../../components/offer-card/offer-card";
+import OfferCard from '../../components/offer-card/offer-card';
 import type { OffersCardInterface, OffersLocation } from '../../types/offers-card-types';
 
 type RoomPageProps = {
@@ -32,9 +32,9 @@ const RoomPage: FC<RoomPageProps> = ({ offersCards }) => {
   };
 
   const points = offersCards.map((offersCardsItem) => {
-    const { id, location } = offersCardsItem;
+    const { id: idNumber, location } = offersCardsItem;
     return {
-      id,
+      id: idNumber,
       ...location,
     };
   });
