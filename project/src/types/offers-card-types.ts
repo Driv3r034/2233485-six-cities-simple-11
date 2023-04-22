@@ -1,3 +1,7 @@
+import { store } from '../store/store';
+
+export type State = ReturnType<typeof store.getState>;
+
 export enum OffersCardTypes {
   PRIVATE_ROOM = 'Private room',
   ROOM = 'Room',
