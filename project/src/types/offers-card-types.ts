@@ -1,8 +1,12 @@
+import { store } from '../store/store';
+
+export type State = ReturnType<typeof store.getState>;
+
 export enum OffersCardTypes {
   PRIVATE_ROOM = 'Private room',
-  ROOM = 'Room',
   APARTMENT = 'Apartment',
   STUDIO = 'Studio',
+  ROOM = 'Room',
 }
 
 export enum RatingStars {
@@ -19,12 +23,12 @@ export type OffersLocation = {
   zoom: number;
 }
 
-type OffersCity = {
+export type OffersCity = {
   name: string;
   location: OffersLocation;
 }
 
-type OffersHost = {
+export type OffersHost = {
   id: number;
   name: string;
   avatarUrl: string;
@@ -48,7 +52,7 @@ export interface OffersCardInterface {
   maxAdults: number;
 }
 
-type ReviewUser = {
+export type ReviewUser = {
   id: number;
   name: string;
   avatarUrl: string;
