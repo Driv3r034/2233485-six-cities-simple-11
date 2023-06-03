@@ -1,5 +1,5 @@
 import CitiesList from '../../components/cities-list/cities-list';
-import { useAppSelector } from '../../hooks/use-selector';
+import { useAppSelector } from '../../hooks/use-app-selector';
 
 const MainEmptyPage = () => {
   const selectedCity = useAppSelector((state) => state.selectedCity);

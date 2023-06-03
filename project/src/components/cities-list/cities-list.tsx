@@ -18,7 +18,7 @@ const CitiesList: FC<CitiesListProps> = ({ selectedCity }) => {
     const city: string = ev.target.textContent;
     store.dispatch(selectCityAction(city));
 
-    console.log('ev', ev);
+    console.log('selectedCity', selectedCity);
   };
 
   return (
@@ -30,7 +30,7 @@ const CitiesList: FC<CitiesListProps> = ({ selectedCity }) => {
             <li className="locations__item" key={item}>
               <Link
                 className={`locations__item-link tabs__item ${selectedCity === item && cityActiveClass}`}
-                to="#"
+                to={`/${selectedCity}`}
                 onClick={handleCityClick}
               >
                 <span>{item}</span>

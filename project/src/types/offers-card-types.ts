@@ -4,9 +4,9 @@ export type State = ReturnType<typeof store.getState>;
 
 export enum OffersCardTypes {
   PRIVATE_ROOM = 'Private room',
-  ROOM = 'Room',
   APARTMENT = 'Apartment',
   STUDIO = 'Studio',
+  ROOM = 'Room',
 }
 
 export enum RatingStars {

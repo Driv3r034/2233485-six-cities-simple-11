@@ -2,10 +2,14 @@ import { ChangeEvent, FC, useState } from 'react';
 
 
 const ReviewForm: FC = () => {
-  const [review, setReview] = useState('');
+  const [review, setReview] = useState({ rating: null, review: '' });
 
-  const handleChange = (event: ChangeEvent<HTMLTextAreaElement>): void => {
-    setReview(event.currentTarget.value);
+  const handleChangeForm = (event: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): void => {
+    const {name, value} = event.target;
+    setReview({
+      ...review,
+      [name]: value,
+    });
   };
 
   return (
@@ -47,8 +51,8 @@ const ReviewForm: FC = () => {
         className="reviews__textarea form__textarea"
         id="review" name="review"
         placeholder="Tell how was your stay, what you like and what can be improved"
-        value={review}
-        onChange={handleChange}
+        value={review.review}
+        onChange={handleChangeForm}
       >
       </textarea>
       <div className="reviews__button-wrapper">

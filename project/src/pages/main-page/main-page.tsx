@@ -2,8 +2,8 @@ import { FC } from 'react';
 import Header from '../../components/header/header';
 import CitiesList from '../../components/cities-list/cities-list';
 import OfferList from '../../components/offer-list/offer-list';
+import { useAppSelector } from '../../hooks/use-app-selector';
 import type { OffersCardInterface } from '../../types/offers-card-types';
-import { useAppSelector } from '../../hooks/use-selector';
 
 type MainPageProps = {
   offersCards: OffersCardInterface[];
