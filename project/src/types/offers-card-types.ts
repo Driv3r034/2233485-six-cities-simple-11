@@ -23,12 +23,12 @@ export type OffersLocation = {
   zoom: number;
 }
 
-type OffersCity = {
+export type OffersCity = {
   name: string;
   location: OffersLocation;
 }
 
-type OffersHost = {
+export type OffersHost = {
   id: number;
   name: string;
   avatarUrl: string;
@@ -52,7 +52,7 @@ export interface OffersCardInterface {
   maxAdults: number;
 }
 
-type ReviewUser = {
+export type ReviewUser = {
   id: number;
   name: string;
   avatarUrl: string;

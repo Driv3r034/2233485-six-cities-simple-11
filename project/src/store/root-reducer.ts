@@ -1,10 +1,10 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { cityNames } from '../constants';
+import { CITIES } from '../constants';
 import offersCards from '../mocks/offers-cards';
 import { selectCityAction } from './actions';
 
 const initialState = {
-  selectedCity: cityNames.PARIS,
+  selectedCity: CITIES[0],
   offers: offersCards,
 };
 

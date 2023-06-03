@@ -1,24 +1,25 @@
-import { FC, BaseSyntheticEvent } from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { cityNames } from '../../constants';
+import { CITIES } from '../../constants';
 import { store } from '../../store/store';
 import { selectCityAction } from '../../store/actions';
+import { OffersCity } from '../../types/offers-card-types';
 
 type CitiesListProps = {
-  selectedCity: string;
+  selectedCity: OffersCity;
 }
 
 const CitiesList: FC<CitiesListProps> = ({ selectedCity }) => {
 
-  const cities = Object.values(cityNames);
   const cityActiveClass = 'tabs__item--active';
 
-  const handleCityClick = (ev: BaseSyntheticEvent) => {
+  const handleCityClick = (ev: MouseEvent) => {
     ev.preventDefault();
-    const city: string = ev.target.textContent;
+    const cityName = ((ev.target as HTMLElement).textContent);
+    const city = CITIES.find(({ name }) => name === cityName) as OffersCity;
     store.dispatch(selectCityAction(city));
 
-    console.log('selectedCity', selectedCity);
+    // console.log('city', city);
   };
 
   return (
@@ -26,14 +27,14 @@ const CitiesList: FC<CitiesListProps> = ({ selectedCity }) => {
       <section className="locations container">
         <ul className="locations__list tabs__list">
 
-          {cities.map((item) => (
-            <li className="locations__item" key={item}>
+          {CITIES.map((item) => (
+            <li className="locations__item" key={item.name}>
               <Link
                 className={`locations__item-link tabs__item ${selectedCity === item && cityActiveClass}`}
-                to={`/${selectedCity}`}
-                onClick={handleCityClick}
+                to={`/${item.name}`}
+                onClick={() => handleCityClick}
               >
-                <span>{item}</span>
+                <span>{item.name}</span>
               </Link>
             </li>
           ))}
